@@ -13,7 +13,7 @@ import Link from 'next/link';
 import { links } from '@/utils/links';
 
 import SignOutLink from './SignOutLink';
-import { SignIn, SignedOut, SignInButton, SignUpButton, SignedIn } from '@clerk/nextjs';
+import { SignedOut, SignInButton, SignUpButton, SignedIn } from '@clerk/nextjs';
 
 
 const DropDownListMenu = () => {

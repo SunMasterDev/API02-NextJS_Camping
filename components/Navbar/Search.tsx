@@ -8,6 +8,7 @@ const Search = () => {
   const {replace} = useRouter()
   // ?.toString() || '' ตรวจสอบว่ามีค่าหรือไม่
   const [search,setSearch] = useState(searchParams.get('search')?.toString() || '')
+  const currentSearchValue = searchParams.get('search')
 
   const handleSearch = useDebouncedCallback((value:string)=>{
     const params =new URLSearchParams(searchParams)
@@ -23,10 +24,10 @@ const Search = () => {
   },500)
 //มีการค้นหา การเปลี่ยนค่าตลอด
 useEffect(()=>{
-  if(!searchParams.get('search')){ //ถ้าไม่มีเซต ('')
+  if(currentSearchValue){ //ถ้าไม่มีเซต ('')
     setSearch('')
   }
-},[searchParams.get('search')])
+},[currentSearchValue,searchParams])
   
   return (
     <Input 
