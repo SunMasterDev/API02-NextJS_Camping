@@ -6,7 +6,7 @@ import Link from "next/link"
 
 const LandMarkCard = ({ Landmark }: { Landmark: LandmarkCardProps }) => { //[] ไม่ต้องใส่ต่อท้ายเพราะว่าเป็น object อยู่แล้ว
   const { name, image, id, description,
-    price, province, lat, lng, category } = Landmark
+    price, province } = Landmark
   return (
     <article className="group relative">
       <Link href={`/landmark/${id}`}>
