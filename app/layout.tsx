@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar/Navbar";
 import Providers from "./Providers";
 import { ClerkProvider } from "@clerk/nextjs";
+import { Suspense } from "react";
 
 const prompt=Prompt({
   weight:'400',
@@ -31,10 +32,12 @@ export default function RootLayout({
       <body
         className={`${prompt.className} ${geistMono.variable} antialiased`} 
       >
-        <Providers>
-        <Navbar/>
-        <main className="container">{children}</main>
-        </Providers>
+        <Suspense>
+          <Providers>
+            <Navbar/>
+              <main className="container">{children}</main>
+          </Providers>
+        </Suspense>
       </body>
     </html>
     </ClerkProvider>
