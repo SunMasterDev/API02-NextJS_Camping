@@ -24,7 +24,7 @@ const Search = () => {
   },500)
 //มีการค้นหา การเปลี่ยนค่าตลอด
 useEffect(()=>{
-  if(currentSearchValue){ //ถ้าไม่มีเซต ('')
+  if(!currentSearchValue){ //ถ้าไม่มีเซต ('')
     setSearch('')
   }
 },[currentSearchValue,searchParams])
