@@ -9,8 +9,8 @@ import { redirect } from "next/navigation";
 
 
 
-const LandmarkDetail = async({params}:{params:{id:string}}) => {
-    const {id} = params
+export default async function LandmarkDetail ({params}:{params:{id:string}}) {
+    const {id} = await params
     const landmark= await fetchLandmarkDetail({id})
 
     if(!landmark) redirect('/')
@@ -42,4 +42,3 @@ const LandmarkDetail = async({params}:{params:{id:string}}) => {
       </section>
   )
 }
-export default LandmarkDetail
